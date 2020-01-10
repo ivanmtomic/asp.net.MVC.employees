@@ -1,0 +1,76 @@
+@model MvcEmployees.Models.Employee
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="modal-body">
+    <h4>Employee</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NettoSallary)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NettoSallary)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BruttoSallary)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BruttoSallary)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.tax1)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tax1)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.tax2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tax2)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.tax3)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tax3)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.tax4)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tax4)
+        </dd>
+    </dl>
+    <form asp-action="CalculateBrutto">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Calculate Brutto Sallary" class="btn btn-success" />
+    </form>
+    
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+            
+            
+            
